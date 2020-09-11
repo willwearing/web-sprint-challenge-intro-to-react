@@ -1,6 +1,15 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import axios from "axios";
+import styled, { keyframes } from "styled-components";
+import Character from "./components/Character";
+
+const StyledApp = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid black;
+`;
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -14,9 +23,10 @@ const App = () => {
     axios
       .get("https://swapi.dev/api/people/")
       .then((response) => {
-        console.log(response);
+        // console.log(response);
         const starChars = response.data.results;
-        console.log(starChars);
+        // console.log(starChars);
+        setChars(starChars);
       })
       .catch((error) => {
         console.log("Sorry, no Characters", error);
@@ -24,9 +34,14 @@ const App = () => {
   }, []);
 
   return (
-    <div className="App">
+    <StyledApp className="App">
       <h1 className="Header">Characters</h1>
-    </div>
+      <div>
+        {chars.map((character) => {
+          return <Character data={character}></Character>;
+        })}
+      </div>
+    </StyledApp>
   );
 };
 
