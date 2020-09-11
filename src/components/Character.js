@@ -2,7 +2,9 @@ import React, { useState, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 
 const StyledChar = styled.div`
-  margin: 15px;
+  background-color: white;
+  margin: 3%;
+  padding: 1%;
   border: 1px solid black;
 `;
 

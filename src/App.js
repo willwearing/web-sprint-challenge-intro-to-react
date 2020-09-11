@@ -4,10 +4,12 @@ import axios from "axios";
 import styled, { keyframes } from "styled-components";
 import Character from "./components/Character";
 
-const StyledApp = styled.div`
+const StyledApp = styled.div``;
+const StyledDiv = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin: 2%;
 `;
 
 const App = () => {
@@ -34,12 +36,12 @@ const App = () => {
 
   return (
     <StyledApp className="App">
-      <h1 className="Header">Characters</h1>
-      <div>
+      <h1>Characters</h1>
+      <StyledDiv>
         {chars.map((character) => {
           return <Character data={character}></Character>;
         })}
-      </div>
+      </StyledDiv>
     </StyledApp>
   );
 };
