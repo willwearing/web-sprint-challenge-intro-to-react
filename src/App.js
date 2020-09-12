@@ -4,6 +4,7 @@ import axios from "axios";
 import styled, { keyframes } from "styled-components";
 import Character from "./components/Character";
 import Button from "./components/Button";
+import Dropdown from "./components/Dropdown";
 
 const StyledApp = styled.div``;
 const StyledDiv = styled.div`
@@ -43,16 +44,17 @@ const App = () => {
           return <Character data={character}></Character>;
         })}
       </StyledDiv>
+        <div className="container">
+      <h1 style={{ textAlign: 'center' }}>
+        Buy Movies{' '}
+        <span role="img" aria-label="Movie projector">
+          🎥
+        </span>
+      </h1>
+      <Dropdown title="Select movie" items={items} multiSelect />
+    </div>
     </StyledApp>
-     <div className="container">
-     <h1 style={{ textAlign: 'center' }}>
-       Buy Movies{' '}
-       <span role="img" aria-label="Movie projector">
-         🎥
-       </span>
-     </h1>
-     <Dropdown title="Select movie" items={items} multiSelect />
-   </div>
+
  );
   );
 };
