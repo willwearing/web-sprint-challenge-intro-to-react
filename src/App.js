@@ -44,6 +44,16 @@ const App = () => {
         })}
       </StyledDiv>
     </StyledApp>
+     <div className="container">
+     <h1 style={{ textAlign: 'center' }}>
+       Buy Movies{' '}
+       <span role="img" aria-label="Movie projector">
+         🎥
+       </span>
+     </h1>
+     <Dropdown title="Select movie" items={items} multiSelect />
+   </div>
+ );
   );
 };
 
